@@ -25,7 +25,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * 
  */
-#include <ESP8266WiFi.h> // UNCOMMENT THIS IF YOU ARE USING ESP8266
+#include <ESP8266WiFi.h> // COMMENT THIS IF YOU ARE USING ARDUINO
 
 #include "logo.h"
 #include "qrcode.h"
