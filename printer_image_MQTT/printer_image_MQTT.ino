@@ -25,10 +25,95 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * 
  */
-#include <ESP8266WiFi.h> // COMMENT THIS IF YOU ARE USING ARDUINO
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
 
 #include "logo.h"
 #include "qrcode.h"
+
+const char* ssid = "IoT_Network";
+const char* password = "griswold";
+const char* mqtt_server = "192.168.1.1";
+
+WiFiClient espClient;
+PubSubClient client(espClient);
+long lastMsg = 0;
+char msg[50];
+int value = 0;
+
+/*
+ * WiFi and MQTT stuff copied from PubSubClient.h library
+ * distribued under MIT license
+ * Source: https://github.com/knolleary/pubsubclient
+ */
+void setup_wifi() {
+  delay(10);
+  // We start by connecting to a WiFi network
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  randomSeed(micros());
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  String msg = "";
+  for (int i = 0; i < length; i++) {
+    msg += (char)payload[i];
+  }
+     Serial.println("Technicka Univerzita v Kosiciach");
+     Serial.write(10); // line feed
+     Serial.println("KATEDRA");
+     Serial.println("TEORETICKEJ A PRIEMYSELNEJ");
+     Serial.println("ELEKTROTECHNIKY");
+      Serial.write(10); // line feed
+      printLogo();
+      Serial.println("Aj "+msg+" moze studovat na KTPE");
+      Serial.write(10); // line feed
+      Serial.println("Viac info:");
+      Serial.write(10); // line feed
+      printQR();
+      Serial.println("www.ktpe.fei.tuke.sk");
+
+      Serial.write(10); // line feed
+      Serial.write(10); // line feed
+      Serial.write(10); // line feed
+      Serial.write(10); // line feed
+}
+
+void reconnect() {
+  // Loop until we're reconnected
+  while (!client.connected()) {
+    Serial.print("Attempting MQTT connection...");
+    // Create a random client ID
+    String clientId = "ESP8266_printer-";
+    clientId += String(random(0xffff), HEX);
+    // Attempt to connect
+    if (client.connect(clientId.c_str())) {
+      Serial.println("connected");
+      Serial.write(10); // line feed
+      Serial.write(10); // line feed
+      Serial.write(10); // line feed
+      Serial.write(10); // line feed
+      client.subscribe("form/newsubmit");
+    } else {
+      Serial.print("failed, rc=");
+      Serial.print(client.state());
+      Serial.println(" try again in 5 seconds");
+      // Wait 5 seconds before retrying
+      delay(5000);
+    }
+  }
+}
 
 /*
  * This function is used for initialisation default printer settings. 
@@ -90,7 +175,7 @@ void printLogo(){
  for(int i=0; i<sizeof(ktpe); i++)
  {
   Serial.write(ktpe[i]);
-  //delay(1);  // optional in case of high density images
+  delay(1);  // optional in case of high density images
  }
  Serial.write(10); // line feed
 }
@@ -126,6 +211,9 @@ void setup()
 {
  Serial.begin(9600); // to write to our new printer
  initPrinter();
+ setup_wifi();
+ client.setServer(mqtt_server, 1883);
+ client.setCallback(callback);
 }
 
 
@@ -136,23 +224,9 @@ void setup()
  
 void loop()
 {
- Serial.println("Technicka Univerzita v Kosiciach");
- Serial.write(10); // line feed
- Serial.println("KATEDRA");
- Serial.println("TEORETICKEJ A PRIEMYSELNEJ");
- Serial.println("ELEKTROTECHNIKY");
- Serial.write(10); // line feed
- printLogo();
- Serial.write(10); // line feed
- Serial.println("Viac info:");
- Serial.write(10); // line feed
- printQR();
- Serial.println("www.ktpe.fei.tuke.sk");
 
- Serial.write(10); // line feed
- Serial.write(10); // line feed
-  while(1)
-  {
-    delay(1000);
+  if (!client.connected()) {
+    reconnect();
   }
+  client.loop();
 }
