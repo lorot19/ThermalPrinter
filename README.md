@@ -11,4 +11,6 @@ which should not work on older ESP/POS printers. This is reason why libraries do
 for all printers. This sketch is written for GSerial GP-5890XIII but it should be 
 compatible with all ESC/POS printers as it is using only standart and some obsolete commands.
 
+Wiring is simple just connect RX and TX lines between ESP and printer
+
 ![](printing.gif)
