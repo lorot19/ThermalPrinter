@@ -1,0 +1,377 @@
+[
+    {
+        "id": "816da333.e86548",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d095ca69.5f9ca",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "KTPE Dotaznik",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f2a649b3.2c93f",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "df2ea663.4687b8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Dotaznik",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "7fabe0a7.5b3db8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Dotazník KTPE",
+        "tab": "df2ea663.4687b8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "233e46ed.0b2b6a",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "192.168.1.1",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": ""
+    },
+    {
+        "id": "85f89ce5.ab56e8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Tlaciaren",
+        "tab": "abe0e6ac.dcbce",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "abe0e6ac.dcbce",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Tlaciaren",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "c5f7dbf7.9ecd78",
+        "type": "ui_form",
+        "z": "816da333.e86548",
+        "name": "Dotaznik KTPE",
+        "label": "",
+        "group": "7fabe0a7.5b3db8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Meno",
+                "value": "name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Priezvisko",
+                "value": "surname",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Email",
+                "value": "email",
+                "type": "email",
+                "required": false
+            }
+        ],
+        "formValue": {
+            "name": "",
+            "surname": "",
+            "email": ""
+        },
+        "payload": "",
+        "submit": "Odoslat",
+        "cancel": "Zrusit",
+        "topic": "",
+        "x": 370,
+        "y": 3360,
+        "wires": [
+            [
+                "4f335eed.a866f8",
+                "82679e3.7d0dbe",
+                "442068b.6b58398"
+            ]
+        ]
+    },
+    {
+        "id": "4f335eed.a866f8",
+        "type": "file",
+        "z": "816da333.e86548",
+        "name": "",
+        "filename": "dotaznik_mena.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "x": 630,
+        "y": 3460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "82679e3.7d0dbe",
+        "type": "change",
+        "z": "816da333.e86548",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.name",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 3320,
+        "wires": [
+            [
+                "a98850b2.9703e8"
+            ]
+        ]
+    },
+    {
+        "id": "c1b14106.dfff3",
+        "type": "debug",
+        "z": "816da333.e86548",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1040,
+        "y": 3340,
+        "wires": []
+    },
+    {
+        "id": "442068b.6b58398",
+        "type": "change",
+        "z": "816da333.e86548",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.surname",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 3380,
+        "wires": [
+            [
+                "a98850b2.9703e8"
+            ]
+        ]
+    },
+    {
+        "id": "a98850b2.9703e8",
+        "type": "join",
+        "z": "816da333.e86548",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": " ",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 870,
+        "y": 3340,
+        "wires": [
+            [
+                "c1b14106.dfff3",
+                "81e9c563.432a"
+            ]
+        ]
+    },
+    {
+        "id": "81e9c563.432a",
+        "type": "mqtt out",
+        "z": "816da333.e86548",
+        "name": "",
+        "topic": "form/newsubmit",
+        "qos": "0",
+        "retain": "false",
+        "broker": "233e46ed.0b2b6a",
+        "x": 1070,
+        "y": 3460,
+        "wires": []
+    },
+    {
+        "id": "3522f18e.e110fe",
+        "type": "ui_button",
+        "z": "816da333.e86548",
+        "name": "",
+        "group": "85f89ce5.ab56e8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Tlac",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "bin",
+        "topic": "",
+        "x": 510,
+        "y": 3600,
+        "wires": [
+            [
+                "81e9c563.432a"
+            ]
+        ]
+    }
+]
