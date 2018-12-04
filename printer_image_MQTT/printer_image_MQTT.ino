@@ -77,12 +77,19 @@ void callback(char* topic, byte* payload, unsigned int length) {
      Serial.println("ELEKTROTECHNIKY");
       Serial.write(10); // line feed
       printLogo();
-      if(msg!="") Serial.println("Aj "+msg+" moze studovat na KTPE");
+      if(msg!="") 
+      {
+        Serial.println(msg);
+        Serial.println("moze studovat na KTPE");
+      }
       Serial.write(10); // line feed
       Serial.println("Viac info:");
       Serial.write(10); // line feed
       printQR();
       Serial.println("www.ktpe.fei.tuke.sk");
+      Serial.write(10); // line feed
+      Serial.println("Dotaznik");
+      Serial.println("www.bit.ly/ktpedotaznik");
 
       Serial.write(10); // line feed
       Serial.write(10); // line feed
