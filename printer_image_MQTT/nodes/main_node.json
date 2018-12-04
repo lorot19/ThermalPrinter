@@ -1,16 +1,54 @@
 [
     {
-        "id": "816da333.e86548",
+        "id": "b264104b.b8ca1",
         "type": "tab",
         "label": "Flow 1",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "d095ca69.5f9ca",
+        "id": "eadc3de.59176c",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant"
+    },
+    {
+        "id": "25afc488.a3a34c",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": ""
+    },
+    {
+        "id": "ee05036d.bfbaf8",
+        "type": "googlehome-config-node",
+        "z": "",
+        "ipaddress": "10.0.1.2",
+        "language": "en"
+    },
+    {
+        "id": "8ee92db.e0032d",
         "type": "ui_base",
         "theme": {
-            "name": "theme-light",
+            "name": "theme-dark",
             "lightTheme": {
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
@@ -22,7 +60,8 @@
                 "default": "#097479",
                 "baseColor": "#097479",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "customTheme": {
                 "name": "Untitled Theme 1",
@@ -32,44 +71,44 @@
             },
             "themeState": {
                 "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
+                    "default": "#097479",
+                    "value": "#097479",
                     "edited": false
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
+                    "value": "#097479",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
                     "value": "#111111",
                     "edited": false
                 },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
                 "widget-backgroundColor": {
-                    "value": "#0094ce",
+                    "value": "#097479",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "base-font": {
@@ -103,7 +142,7 @@
         }
     },
     {
-        "id": "f2a649b3.2c93f",
+        "id": "3b99f139.e6c89e",
         "type": "ui_group",
         "z": "",
         "name": "Default",
@@ -113,7 +152,7 @@
         "collapse": false
     },
     {
-        "id": "df2ea663.4687b8",
+        "id": "c27d999.36dea68",
         "type": "ui_tab",
         "z": "",
         "name": "Dotaznik",
@@ -121,18 +160,18 @@
         "order": 1
     },
     {
-        "id": "7fabe0a7.5b3db8",
+        "id": "2b440b66.835e9c",
         "type": "ui_group",
         "z": "",
         "name": "Dotazník KTPE",
-        "tab": "df2ea663.4687b8",
-        "order": 1,
+        "tab": "c27d999.36dea68",
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false
     },
     {
-        "id": "233e46ed.0b2b6a",
+        "id": "6a67d087.a32dd8",
         "type": "mqtt-broker",
         "z": "",
         "name": "",
@@ -157,18 +196,18 @@
         "willPayload": ""
     },
     {
-        "id": "85f89ce5.ab56e8",
+        "id": "e19ec4ac.e78d1",
         "type": "ui_group",
         "z": "",
         "name": "Tlaciaren",
-        "tab": "abe0e6ac.dcbce",
+        "tab": "bbe00ad2.4235",
         "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false
     },
     {
-        "id": "abe0e6ac.dcbce",
+        "id": "bbe00ad2.4235",
         "type": "ui_tab",
         "z": "",
         "name": "Tlaciaren",
@@ -176,74 +215,108 @@
         "order": 2
     },
     {
-        "id": "c5f7dbf7.9ecd78",
+        "id": "c38c4436.4bc8c8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "WiFi rover",
+        "icon": "dashboard",
+        "order": 3
+    },
+    {
+        "id": "94f71f94.544398",
+        "type": "ui_group",
+        "z": "",
+        "name": "Joysticke",
+        "tab": "c38c4436.4bc8c8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1a49af50.cf1401",
         "type": "ui_form",
-        "z": "816da333.e86548",
+        "z": "b264104b.b8ca1",
         "name": "Dotaznik KTPE",
         "label": "",
-        "group": "7fabe0a7.5b3db8",
+        "group": "2b440b66.835e9c",
         "order": 0,
-        "width": 0,
-        "height": 0,
+        "width": "6",
+        "height": "4",
         "options": [
             {
                 "label": "Meno",
                 "value": "name",
                 "type": "text",
-                "required": true
+                "required": false
             },
             {
                 "label": "Priezvisko",
                 "value": "surname",
                 "type": "text",
-                "required": true
+                "required": false
             },
             {
                 "label": "Email",
                 "value": "email",
                 "type": "email",
                 "required": false
+            },
+            {
+                "label": "Škola",
+                "value": "school",
+                "type": "text",
+                "required": false
+            },
+            {
+                "label": "Ročník",
+                "value": "shool_year",
+                "type": "number",
+                "required": false
             }
         ],
         "formValue": {
             "name": "",
             "surname": "",
-            "email": ""
+            "email": "",
+            "school": "",
+            "shool_year": ""
         },
         "payload": "",
         "submit": "Odoslat",
         "cancel": "Zrusit",
         "topic": "",
-        "x": 370,
-        "y": 3360,
+        "x": 180,
+        "y": 340,
         "wires": [
             [
-                "4f335eed.a866f8",
-                "82679e3.7d0dbe",
-                "442068b.6b58398"
+                "a796b7b8.d1f0e",
+                "35879158.e1756e",
+                "6737e896.a2b868",
+                "ce7d9e6a.6e9f58"
             ]
         ]
     },
     {
-        "id": "4f335eed.a866f8",
+        "id": "a796b7b8.d1f0e",
         "type": "file",
-        "z": "816da333.e86548",
+        "z": "b264104b.b8ca1",
         "name": "",
-        "filename": "dotaznik_mena.txt",
+        "filename": "/share/dotaznik_mena.json",
         "appendNewline": true,
-        "createDir": false,
+        "createDir": true,
         "overwriteFile": "false",
-        "x": 630,
-        "y": 3460,
+        "x": 460,
+        "y": 460,
         "wires": [
             []
         ]
     },
     {
-        "id": "82679e3.7d0dbe",
+        "id": "35879158.e1756e",
         "type": "change",
-        "z": "816da333.e86548",
-        "name": "",
+        "z": "b264104b.b8ca1",
+        "name": "Name",
         "rules": [
             {
                 "t": "set",
@@ -258,33 +331,33 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 3320,
+        "x": 440,
+        "y": 300,
         "wires": [
             [
-                "a98850b2.9703e8"
+                "b45e9ca0.6bd148"
             ]
         ]
     },
     {
-        "id": "c1b14106.dfff3",
+        "id": "71a70a85.8bf654",
         "type": "debug",
-        "z": "816da333.e86548",
-        "name": "",
+        "z": "b264104b.b8ca1",
+        "name": "Debug",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
-        "x": 1040,
-        "y": 3340,
+        "complete": "payload",
+        "x": 890,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "442068b.6b58398",
+        "id": "6737e896.a2b868",
         "type": "change",
-        "z": "816da333.e86548",
-        "name": "",
+        "z": "b264104b.b8ca1",
+        "name": "Surname",
         "rules": [
             {
                 "t": "set",
@@ -299,18 +372,18 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 3380,
+        "x": 450,
+        "y": 360,
         "wires": [
             [
-                "a98850b2.9703e8"
+                "b45e9ca0.6bd148"
             ]
         ]
     },
     {
-        "id": "a98850b2.9703e8",
+        "id": "b45e9ca0.6bd148",
         "type": "join",
-        "z": "816da333.e86548",
+        "z": "b264104b.b8ca1",
         "name": "",
         "mode": "custom",
         "build": "string",
@@ -327,51 +400,78 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 870,
-        "y": 3340,
+        "x": 630,
+        "y": 320,
         "wires": [
             [
-                "c1b14106.dfff3",
-                "81e9c563.432a"
+                "71a70a85.8bf654",
+                "ab91ed32.a94338",
+                "720a7d28.1b5c94"
             ]
         ]
     },
     {
-        "id": "81e9c563.432a",
+        "id": "720a7d28.1b5c94",
         "type": "mqtt out",
-        "z": "816da333.e86548",
+        "z": "b264104b.b8ca1",
         "name": "",
         "topic": "form/newsubmit",
         "qos": "0",
         "retain": "false",
-        "broker": "233e46ed.0b2b6a",
-        "x": 1070,
-        "y": 3460,
+        "broker": "6a67d087.a32dd8",
+        "x": 920,
+        "y": 420,
         "wires": []
     },
     {
-        "id": "3522f18e.e110fe",
-        "type": "ui_button",
-        "z": "816da333.e86548",
+        "id": "ce7d9e6a.6e9f58",
+        "type": "csv",
+        "z": "b264104b.b8ca1",
         "name": "",
-        "group": "85f89ce5.ab56e8",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Tlac",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "[]",
-        "payloadType": "bin",
-        "topic": "",
-        "x": 510,
-        "y": 3600,
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "name, surname, email, school, school_year",
+        "skip": "0",
+        "x": 390,
+        "y": 520,
         "wires": [
             [
-                "81e9c563.432a"
+                "f70152c3.fbeb88"
             ]
         ]
+    },
+    {
+        "id": "f70152c3.fbeb88",
+        "type": "file",
+        "z": "b264104b.b8ca1",
+        "name": "",
+        "filename": "/share/dotaznik_mena.csv",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "x": 600,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab91ed32.a94338",
+        "type": "ui_toast",
+        "z": "b264104b.b8ca1",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "Registrácia prebehla úspešne",
+        "name": "Notification",
+        "x": 910,
+        "y": 360,
+        "wires": []
     }
 ]
