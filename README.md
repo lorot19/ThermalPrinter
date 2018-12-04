@@ -14,3 +14,10 @@ compatible with all ESC/POS printers as it is using only standart and some obsol
 Wiring is simple just connect RX and TX lines between ESP and printer
 
 ![](printing.gif)
+
+# ThermalPrinter MQTT
+Example of using MQTT protocol for printer control and sending data. This sketch was used in combination with simple questionaire created in node-red dashboard. Once form is filled and submited, datas are stored in local .json and .csv files. Simultantously Name and Surname are posted using MQTT into broker and received by printer After that label with
+advert containing Name and surname is printed.
+
+<img src="dashboard.png" alt="drawing" width="200"/></img>
+![](nodes.png)
